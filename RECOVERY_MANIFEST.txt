@@ -1,0 +1,20 @@
+Recovered browser-harness implementation snapshot
+Date: 2026-09-06
+
+Primary custom integration repo: /home/riveracarmeloiii/claude-code
+Custom implementation branch history: origin/codex/set-up-browser-harness-from-github
+Codex global skill: /home/riveracarmeloiii/.codex/skills/browser-harness/SKILL.md
+Upstream checkout: /home/riveracarmeloiii/Developer/browser-harness
+
+Included custom files:
+- claude-code/SETUP_BROWSER_HARNESS.md
+- claude-code/Dockerfile.browser-harness
+- claude-code/scripts/setup-browser-harness.sh
+- claude-code/scripts/browser-harness-healthcheck.sh
+- claude-code/scripts/browser-harness-playwright-session.py
+- claude-code/scripts/proxy-auth-forwarder.py
+- claude-code/scripts/verify-browser-harness-production.sh
+- codex-skill/SKILL.md
+- upstream Python package source and upstream setup docs
+
+Secrets intentionally excluded. No .bashrc API-key values or browser storage-state/cookie files copied.

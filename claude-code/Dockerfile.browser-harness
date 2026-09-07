@@ -1,0 +1,29 @@
+FROM mcr.microsoft.com/playwright/python:v1.61.0-noble
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    BH_CDP_URL=http://127.0.0.1:9222 \
+    BH_CHROME_PROFILE=/tmp/browser-harness-chrome-profile \
+    BH_RESTART_AFTER=50 \
+    PATH=/root/.local/bin:/root/.cargo/bin:${PATH}
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl git ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen
+
+COPY scripts/ ./scripts/
+COPY SETUP_BROWSER_HARNESS.md ./SETUP_BROWSER_HARNESS.md
+
+RUN ./scripts/setup-browser-harness.sh \
+    && scripts/browser-harness-healthcheck.sh
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
+  CMD /app/scripts/browser-harness-healthcheck.sh || exit 1
+
+CMD ["browser-harness", "--doctor"]

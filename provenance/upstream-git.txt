@@ -1,0 +1,25 @@
+## main...origin/main
+
+origin	https://github.com/browser-use/browser-harness.git (fetch)
+origin	https://github.com/browser-use/browser-harness.git (push)
+
+4d75f11 (HEAD -> main, tag: v0.1.4, origin/main, origin/HEAD) Merge pull request #477 from browser-use/browser-use-skill-name
+607f168 update key importation
+057dd15 promote v4
+81daf7f restore browser-use skill identity
+be7a36d align skill identity with harness CLI
+ffa5db0 Update description in test_skill.py metadata
+5d34276 rename to browser use
+7594909 (tag: v0.1.3) Merge pull request #468 from browser-use/codex/release-0.1.3
+a0db945 Release 0.1.3
+74df43d Merge pull request #467 from browser-use/codex/fix-skill-frontmatter
+5447f2a Fix skill frontmatter
+7481e13 (tag: v0.1.2) Merge pull request #466 from browser-use/codex/release-0.1.2
+1b71fd9 Release 0.1.2
+1000c69 Merge pull request #465 from browser-use/codex/minor-fixes
+7704c8c Merge pull request #464 from browser-use/codex/fix-uv-install-python
+6aab2c6 Minor fixes
+64a65ec Pin install command to supported Python
+691dc96 (tag: v0.1.1) Merge pull request #463 from browser-use/codex/fix-packaged-skill-links
+f325047 Bump package version to 0.1.1
+f74291d Make install upgrade existing browser-harness
